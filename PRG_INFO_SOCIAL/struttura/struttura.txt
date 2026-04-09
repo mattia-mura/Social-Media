@@ -1,0 +1,34 @@
+project/
+├── db/
+│   └── db.sql
+├── backend/
+│   ├── config/
+│   │   └── Database.php
+│   ├── models/
+│   │   ├── User.php
+│   │   └── Post.php
+│   ├── controllers/
+│   │   ├── AuthController.php
+│   │   └── PostController.php
+│   ├── middleware/
+│   │   └── AuthMiddleware.php
+│   └── api/
+│       └── index.php          ← router API
+├── frontend/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   ├── main.css
+│   │   │   ├── layout.css
+│   │   │   └── feed.css
+│   │   ├── js/
+│   │   │   └── main.js
+│   │   └── img/
+│   ├── layout/
+│   │   ├── header.php
+│   │   ├── footer.php
+│   │   └── stories.php
+│   ├── feed.php
+│   ├── login.php
+│   └── register.php
+└── logo/
+    └── logo_social-media.png
