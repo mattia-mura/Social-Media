@@ -1,0 +1,230 @@
+/* ══════════════════════════════════════════════
+   GUSTAGRAM — feed.css
+   Card post, azioni, stelle rating
+   ══════════════════════════════════════════════ */
+
+/* ── FEED WRAPPER ───────────────────────────── */
+.feed {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding-top: calc(var(--nav-h) + 78px);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ── CARD ───────────────────────────────────── */
+.card {
+    background: var(--white);
+    border-bottom: 1.5px solid var(--cream-dark);
+    animation: fadeUp .4s ease both;
+}
+.card:nth-child(1) { animation-delay: .00s; }
+.card:nth-child(2) { animation-delay: .08s; }
+.card:nth-child(3) { animation-delay: .16s; }
+.card:nth-child(4) { animation-delay: .24s; }
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── CARD HEADER ────────────────────────────── */
+.card__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 14px 9px;
+}
+.card__avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--amber), var(--terracotta));
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    overflow: hidden;
+    text-decoration: none;
+}
+.card__avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.card__user-info {
+    flex: 1;
+    min-width: 0;
+}
+.card__username {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--brown-deep);
+    text-decoration: none;
+    display: block;
+}
+.card__username:hover { color: var(--terracotta); }
+
+.card__meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+}
+.card__cuisine {
+    font-size: 10.5px;
+    background: var(--cream-dark);
+    color: var(--brown-mid);
+    padding: 2px 7px;
+    border-radius: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.card__time {
+    font-size: 10.5px;
+    color: var(--brown-light);
+}
+.card__more {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: var(--brown-light);
+    transition: background var(--transition);
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+.card__more:hover { background: var(--cream-dark); }
+
+/* ── CARD IMAGE ─────────────────────────────── */
+.card__image {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: linear-gradient(135deg, #EDD9C0 0%, #F5C9A0 40%, #E8B888 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    position: relative;
+    overflow: hidden;
+}
+.card__image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: absolute; inset: 0;
+}
+.card__image::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 55%, rgba(61,26,6,0.06));
+    pointer-events: none;
+}
+
+/* ── CARD BODY ──────────────────────────────── */
+.card__body {
+    padding: 12px 14px 8px;
+}
+.card__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brown-deep);
+    line-height: 1.25;
+    margin-bottom: 5px;
+}
+
+/* Stelle */
+.stars {
+    display: inline-flex;
+    gap: 1px;
+    margin-bottom: 7px;
+}
+.star        { font-size: 13px; color: var(--cream-mid); }
+.star.filled { color: var(--amber); }
+
+.card__content {
+    font-size: 13.5px;
+    color: var(--brown-mid);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card__readmore {
+    font-size: 12.5px;
+    color: var(--terracotta);
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 4px;
+    transition: opacity var(--transition);
+}
+.card__readmore:hover { opacity: .75; }
+
+/* ── CARD ACTIONS ───────────────────────────── */
+.card__actions {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px 12px;
+    gap: 2px;
+    border-top: 1px solid var(--cream-dark);
+    margin-top: 8px;
+}
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--brown-mid);
+    transition: background var(--transition), color var(--transition);
+}
+.action-btn:hover { background: var(--cream-dark); }
+.action-btn .icon { font-size: 17px; line-height: 1; }
+
+/* Like attivo */
+.action-btn.liked { color: var(--terracotta); }
+.action-btn.liked .icon { animation: pop .28s ease; }
+
+@keyframes pop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.45); }
+    100% { transform: scale(1); }
+}
+
+/* Salva attivo */
+.action-btn.saved { color: var(--amber); }
+
+/* Condividi — allineato a destra */
+.action-btn.share {
+    margin-left: auto;
+    color: var(--brown-light);
+}
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (min-width: 600px) {
+    .feed { padding-top: calc(var(--nav-h) + 84px); }
+}
+
+@media (min-width: 900px) {
+    .feed {
+        max-width: 540px;
+        padding-top: calc(var(--nav-h) + 88px);
+        gap: 10px;
+        padding-bottom: calc(var(--bar-h) + 30px);
+    }
+    .card {
+        border-radius: var(--radius);
+        border: 1.5px solid var(--cream-mid);
+        box-shadow: var(--shadow-card);
+        overflow: hidden;
+    }
+}
