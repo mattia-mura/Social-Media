@@ -1,0 +1,108 @@
+/* backend/login/register_style.css */
+
+:root {
+    --orange: #E2621B;
+    --terracotta: #C1440E;
+    --brown-deep: #3D1A06;
+    --brown-light: #B07050;
+    --white: #FFFFFF;
+    --gray-bg: #fafafa;
+    --shadow: rgba(61, 26, 6, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--gray-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px var(--shadow);
+    text-align: center;
+}
+
+.logo-reg {
+    width: 60px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+h2 { color: var(--brown-deep); margin-bottom: 10px; }
+
+.subtitle {
+    color: var(--brown-light);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--brown-deep);
+}
+
+input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #eee;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus { border-color: var(--orange); }
+
+.btn-reg {
+    width: 100%;
+    padding: 14px;
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-reg:hover { background: var(--orange); }
+
+.error-msg {
+    color: #d63031;
+    background: #fff0f0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.footer-link {
+    margin-top: 25px;
+    font-size: 14px;
+    color: var(--brown-light);
+}
+
+.footer-link a {
+    color: var(--terracotta);
+    text-decoration: none;
+    font-weight: 600;
+}
